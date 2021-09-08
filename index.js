@@ -37,7 +37,7 @@ app.use( ( request, response, next ) => {
 
 // Agregar body parser para leer los datos del formulario
 app.use( express.json() );
-app.use( express.urlencoded( { urlencoded: true } ) );
+app.use( express.urlencoded( { extended: true } ) );
 
 // Definir la carpeta pública
 app.use( express.static( 'public' ) );
