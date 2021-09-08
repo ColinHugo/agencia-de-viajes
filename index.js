@@ -3,6 +3,7 @@ import express from 'express';
 import router from './routes/index.js';
 import db from "./config/db.js";
 import dotenv from 'dotenv';
+import cors from 'cors';
 
 dotenv.config( { path:"variables.env" } );
 
@@ -38,6 +39,7 @@ app.use( ( request, response, next ) => {
 // Agregar body parser para leer los datos del formulario
 app.use( express.json() );
 app.use( express.urlencoded( { extended: true } ) );
+app.use( cors() );
 
 // Definir la carpeta pública
 app.use( express.static( 'public' ) );
