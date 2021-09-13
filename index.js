@@ -17,7 +17,7 @@ db.authenticate()
 // Puerto y host para la app
 // Definir puerto
 const host = process.env.HOST || '0.0.0.0';
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3000;
 
 // Habilitar pug
 app.set( 'view engine', 'pug' );
@@ -48,5 +48,5 @@ app.use( express.static( 'public' ) );
 app.use( '/', router );
 
 app.listen( port, host, () => {
-    console.log( `El servidor está funcionando en el puerto ${ port }` );
+    console.log( 'El servidor está funcionando en el puerto:', port );
 } );
